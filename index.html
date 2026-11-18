@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pide tu Pobre Beto</title>
+<meta name="description" content="Tu historia de pareja animada por Pobre Beto, con sus nombres.">
+<style>
+:root{
+  --bg:#f6f3ec; --card:#fff; --ink:#1d2421; --muted:#5d6763; --line:#ddd6c8;
+  --verde:#2f8f4e; --verde-ink:#fff; --rosa:#e0699a; --aviso:#fff3d6;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#141816; --card:#1e2421; --ink:#eef1ee; --muted:#a3ada8; --line:#33403a;
+    --verde:#3fae63; --verde-ink:#0d1410; --rosa:#f08cb4; --aviso:#3a3220;}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:640px;margin:0 auto;padding:24px 16px 64px}
+header{display:flex;gap:16px;align-items:center}
+header img{width:84px;height:84px;border-radius:50%;flex:none;border:3px solid var(--verde)}
+h1{font-size:1.75rem;line-height:1.15;margin:0}
+h2{font-size:1.2rem;margin:32px 0 8px}
+p{margin:8px 0}
+.muted{color:var(--muted)}
+.pasos{padding-left:20px}
+.pasos li{margin:4px 0}
+.paquetes{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:560px){.paquetes{grid-template-columns:1fr 1fr}}
+.paq{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.paq b{display:block;font-size:1.05rem}
+.precio{font-size:1.4rem;font-weight:700;color:var(--verde)}
+.urg{grid-column:1/-1;background:var(--aviso)}
+form{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:16px}
+label{font-weight:600;display:block;margin-bottom:4px}
+.hint{font-weight:400;color:var(--muted);font-size:.9rem}
+input[type=text],input[type=email],textarea,select{width:100%;font:inherit;color:inherit;background:var(--bg);
+  border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+textarea{min-height:160px;resize:vertical}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--verde);outline-offset:1px}
+.fila{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+fieldset{border:0;padding:0;margin:0}
+.opc{display:flex;gap:8px;flex-wrap:wrap}
+.opc label{font-weight:400;border:1px solid var(--line);border-radius:999px;padding:6px 12px;margin:0;cursor:pointer;background:var(--bg)}
+.opc input{accent-color:var(--verde)}
+.check{display:flex;gap:10px;align-items:flex-start;font-weight:400}
+.check input{margin-top:5px;accent-color:var(--verde)}
+button{font:inherit;font-weight:700;border:0;border-radius:12px;padding:14px 18px;cursor:pointer}
+.primario{background:var(--verde);color:var(--verde-ink);width:100%}
+.secundario{background:transparent;color:var(--ink);border:1px solid var(--line);width:100%}
+#listo{display:none;background:var(--aviso);border-radius:14px;padding:16px}
+.reglas li{margin:4px 0}
+small{color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <img src="beto.png" alt="Beto, con cara de sufrimiento">
+  <div>
+    <h1>¿Tu novia también es así? Pide TU video</h1>
+    <p class="muted">Tú nos cuentas qué te hace, Beto lo sufre por ti. Con sus nombres.</p>
+  </div>
+</header>
+
+<p>Ya te reíste con los de Beto y Sofía. Ahora imagínate el tuyo: tu historia, tus nombres, animado igualito que en el canal. Pa' regalar, pa' dedicar o pa' mandárselo en el grupo y que todos sepan lo que aguantas, compa.</p>
+
+<h2>Cómo funciona</h2>
+<ol class="pasos">
+  <li>Llenas el formulario con tu historia.</li>
+  <li>La leemos y te contestamos en menos de 24 h si sí la hacemos.</li>
+  <li>Si es que sí, te mandamos el link de pago en dólares 💵 (PayPal o tarjeta, sin cuenta de PayPal).</li>
+  <li>Ese mismo día te llega el video a tu correo. Tú nomás lo compartes.</li>
+</ol>
+<p class="muted">No pagas nada hasta que te digamos que sí.</p>
+
+<h2>Paquetes</h2>
+<div class="paquetes">
+  <div class="paq"><b>Beto narra tu historia</b><span class="precio">US$10</span><p class="muted">~$190 MXN</p><p>Beto cuenta lo que te pasó, con tus nombres, con Beto y Sofía del canal.</p></div>
+  <div class="paq"><b>Tu propio personaje y pareja</b><span class="precio">US$20</span><p class="muted">~$380 MXN</p><p>Los dibujamos a ustedes dos como personajes del canal: tu pelo, tu barba, sus lentes, todo.</p></div>
+  <div class="paq urg"><b>Todo en el mismo día</b><p>Hasta 2 minutos de video. Te lo entregamos en menos de 24 h desde que pagas. Porque claro, el aniversario era hoy.</p></div>
+</div>
+
+<h2>Cuéntanos tu sufrimiento</h2>
+<form id="pedido" novalidate>
+  <div class="fila">
+    <div><label for="tu">Tu nombre <span class="hint">(solo de pila)</span></label><input type="text" id="tu" name="tu" maxlength="30" required autocomplete="given-name"></div>
+    <div><label for="pareja">El de tu pareja</label><input type="text" id="pareja" name="pareja" maxlength="30" required></div>
+  </div>
+
+  <div>
+    <label for="historia">¿Qué pasó? <span class="hint">Lo que te hace, lo que te dice, la vez que te dejó en visto por tres horas… Entre más detalle, más risa.</span></label>
+    <textarea id="historia" name="historia" maxlength="1200" required placeholder="Ej.: Le pregunto qué quiere cenar, dice «lo que tú quieras», y cuando llego con tacos me dice que ella quería sushi…"></textarea>
+    <small><span id="cuenta">0</span>/1200</small>
+  </div>
+
+  <fieldset>
+    <label>¿Qué tono?</label>
+    <div class="opc">
+      <label><input type="radio" name="tono" value="Como en el canal (Beto sufriendo)" checked> Como en el canal</label>
+      <label><input type="radio" name="tono" value="Romántico con chiste"> Romántico con chiste</label>
+      <label><input type="radio" name="tono" value="Para dedicar / aniversario"> Pa' dedicar</label>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <label>¿Groserías?</label>
+    <div class="opc">
+      <label><input type="radio" name="groserias" value="Como en el canal" checked> Como en el canal</label>
+      <label><input type="radio" name="groserias" value="Suavecito"> Suavecito</label>
+      <label><input type="radio" name="groserias" value="Sin groserías"> Cero, es pa' la suegra</label>
+    </div>
+  </fieldset>
+
+  <div class="fila">
+    <div>
+      <label for="idioma">Idioma</label>
+      <select id="idioma" name="idioma">
+        <option>Español mexicano</option>
+        <option>Inglés (English)</option>
+      </select>
+    </div>
+    <div>
+      <label for="paquete">Paquete</label>
+      <select id="paquete" name="paquete">
+        <option value="Beto narra tu historia (US$10)">Beto narra tu historia · US$10</option>
+        <option value="Tu propio personaje y pareja (US$20)">Tu propio personaje y pareja · US$20</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="cajaLook" hidden>
+    <label for="look">¿Cómo se ven ustedes dos? <span class="hint">Pelo, color de piel, barba, lentes, ropa que siempre traen… Nada de fotos: con la descripción los dibujamos.</span></label>
+    <textarea id="look" name="look" maxlength="500" style="min-height:100px" placeholder="Ej.: Yo moreno, pelo corto rizado, barba, siempre con gorra de los Dodgers. Ella güera, pelo largo lacio, lentes, sudadera rosa."></textarea>
+  </div>
+
+  <div>
+    <label for="correo">Tu correo <span class="hint">(ahí te contestamos y te mandamos el video)</span></label>
+    <input type="email" id="correo" name="correo" required autocomplete="email">
+  </div>
+
+  <label class="check"><input type="checkbox" id="reglas" required> Tengo 18 años o más, mi pareja está de acuerdo en salir con su nombre y acepto las reglas de abajo.</label>
+  <label class="check"><input type="checkbox" id="publicar"> Pueden subir mi video al canal de Pobre Beto (opcional).</label>
+
+  <p id="error" role="alert" style="color:var(--rosa);margin:0"></p>
+  <button class="primario" type="submit">Enviar mi historia</button>
+  <button class="secundario" type="button" id="copiar">Mejor copiarla y mandarla por DM</button>
+</form>
+
+<div id="listo" aria-live="polite">
+  <b>¡Va!</b> Se abrió tu correo con el pedido ya escrito: nomás dale enviar. Si no se abrió, usa el botón de copiar y mándanoslo por DM a @pobre_beto. Te contestamos en menos de 24 h.
+</div>
+
+<h2>Las reglas (pa' que no haya broncas)</h2>
+<ul class="reglas">
+  <li>El chiste es la situación, no humillar a nadie: ni al novio ni a la novia.</li>
+  <li>Nada sexual. Nos ven chavitos.</li>
+  <li>Salen Beto y Sofía, o sus personajes dibujados con nuestro estilo. Nunca fotos ni caras reales.</li>
+  <li>Solo nombres de pila: sin apellidos, @, direcciones ni nada que identifique a alguien.</li>
+  <li>Nada de exhibir a un ex o a otra persona, ni odio, violencia o drogas.</li>
+  <li>Podemos rechazar cualquier historia. Como cobramos hasta decirte que sí, no pierdes nada; y si ya pagaste y no podemos entregar, te regresamos el 100 %.</li>
+  <li>Tu correo solo sirve para mandarte el video. Lo borramos 30 días después.</li>
+</ul>
+<p class="muted">Pobre Beto · lo que sufrimos los novios 😩</p>
+</main>
+
+<script>
+// Llenar antes de publicar:
+const CORREO_PEDIDOS = "henriqueggpaisnegocios@gmail.com";
+
+const f = document.getElementById("pedido");
+const $ = id => document.getElementById(id);
+$("historia").addEventListener("input", e => $("cuenta").textContent = e.target.value.length);
+const propio = () => f.elements.paquete.selectedIndex === 1;
+f.elements.paquete.addEventListener("change", () => $("cajaLook").hidden = !propio());
+
+function armar() {
+  const v = n => f.elements[n].value.trim();
+  const faltan = [];
+  if (!v("tu")) faltan.push("tu nombre");
+  if (!v("pareja")) faltan.push("el de tu pareja");
+  if (v("historia").length < 30) faltan.push("la historia (mínimo unas líneas)");
+  if (!$("correo").checkValidity() || !v("correo")) faltan.push("un correo válido");
+  if (propio() && v("look").length < 15) faltan.push("cómo se ven ustedes dos");
+  if (!$("reglas").checked) faltan.push("aceptar las reglas");
+  if (faltan.length) { $("error").textContent = "Falta: " + faltan.join(", ") + "."; return null; }
+  $("error").textContent = "";
+  return [
+    "PEDIDO POBRE BETO",
+    "Nombres: " + v("tu") + " y " + v("pareja"),
+    "Paquete: " + v("paquete"),
+    ...(propio() ? ["Cómo se ven: " + v("look")] : []),
+    "Idioma: " + v("idioma"),
+    "Tono: " + f.elements.tono.value,
+    "Groserías: " + f.elements.groserias.value,
+    "Correo: " + v("correo"),
+    "Permiso para publicar en el canal: " + ($("publicar").checked ? "sí" : "no"),
+    "",
+    "Historia:",
+    v("historia")
+  ].join("\n");
+}
+
+f.addEventListener("submit", e => {
+  e.preventDefault();
+  const texto = armar();
+  if (!texto) return;
+  const asunto = "Pedido Pobre Beto: " + f.elements.tu.value.trim() + " y " + f.elements.pareja.value.trim();
+  location.href = "mailto:" + CORREO_PEDIDOS + "?subject=" + encodeURIComponent(asunto) + "&body=" + encodeURIComponent(texto);
+  $("listo").style.display = "block";
+});
+
+$("copiar").addEventListener("click", async () => {
+  const texto = armar();
+  if (!texto) return;
+  try { await navigator.clipboard.writeText(texto); $("copiar").textContent = "¡Copiado! Pégalo en un DM a @pobre_beto"; }
+  catch { prompt("Copia esto y mándalo por DM a @pobre_beto:", texto); }
+});
+</script>
+</body>
+</html>
